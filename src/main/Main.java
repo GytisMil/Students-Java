@@ -2,6 +2,7 @@ package main;
 import Human.Student;
 import java.util.Scanner;
 import Input_Checks.*;
+import Functions.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -14,13 +15,14 @@ public class Main {
 				
 				int input = User_input.nextInt();
 				input_format_check = One_Zero.Check(input);
+				generation_choice = input;
 			
 			} catch (Exception e) {
 				System.out.println("Invalid input. Try again");
 				User_input.next();
 			}
 		}
-		//Student a = new Student("Joshua");
-		//System.out.println(a.nameGetter());
+		if(generation_choice == 1)
+			Student_generation.Generate();
 	}
 }
