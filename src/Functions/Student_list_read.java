@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import Human.Student;
 
 public class Student_list_read {
-	private static void openFile() {
+	private static void openFile(ArrayList<Student> student_arraylist) {
 		try {
 		      File student_list = new File("C:\\Programming projects\\Java\\Students\\Student_List.txt");
 		      Scanner File_Reader = new Scanner(student_list);
 		      while (File_Reader.hasNextLine()) {
 		        String data = File_Reader.nextLine();
-		        Read_Student(data);
+		        Student student_from_file = Read_Student(data);
+		        student_arraylist.add(student_from_file);
 		      }
 		      File_Reader.close();
 		    } catch (FileNotFoundException e) {
@@ -35,7 +36,7 @@ public class Student_list_read {
 	}
 	public static ArrayList<Student> Get_Student_list() {
 		ArrayList<Student> list = new ArrayList<Student>();
-		openFile();
+		openFile(list);
 		return list;
 	}
 }
