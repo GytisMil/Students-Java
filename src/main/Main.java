@@ -28,5 +28,7 @@ public class Main {
 			Student_generation.Generate();
 		System.out.println("Reading Student list file...");
 		ArrayList<Student> Student_list = Student_list_read.Get_Student_list();
+		System.out.println("Calculating average grade of students...");
+		Average_calculator.calculate_list_average(Student_list);
 	}
 }
