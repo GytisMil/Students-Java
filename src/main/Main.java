@@ -1,4 +1,5 @@
 package main;
+import java.util.ArrayList;
 import Human.Student;
 import java.util.Scanner;
 import Input_Checks.*;
@@ -22,7 +23,10 @@ public class Main {
 				User_input.next();
 			}
 		}
+		User_input.close();
 		if(generation_choice == 1)
 			Student_generation.Generate();
+		System.out.println("Reading Student list file...");
+		ArrayList<Student> Student_list = Student_list_read.Get_Student_list();
 	}
 }
