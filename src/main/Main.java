@@ -30,5 +30,9 @@ public class Main {
 		ArrayList<Student> Student_list = Student_list_read.Get_Student_list();
 		System.out.println("Calculating average grade of students...");
 		Average_calculator.calculate_list_average(Student_list);
+		System.out.println("Assigning students by average grade...");
+		ArrayList<Student> Uneducated_Students = Group_assign.uneducated_group(Student_list);
+		ArrayList<Student> Educated_Students = Group_assign.educated_group(Student_list);
+		//System.out.println("Writing groups into text files...");
 	}
 }
